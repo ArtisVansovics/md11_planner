@@ -1,5 +1,38 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  background-color: white;
+  color: black;
+  padding: 20px;
+}
+
+.dark-mode {
+  background-color: #152028;
+  color: white;
+}
+
+.dark-mode__toggle {
+  display: flex;
+  justify-content: center;
+  background-color: #152028;
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  border: none;
+  transition: opacity 1s;
+  color: white;
+  font-size: 14px;
+  user-select: none;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.dark-mode .dark-mode__toggle {
+  background-color: white;
+  color: #152028;
 }
 
 .box {
@@ -8,3 +41,4 @@
   margin-bottom: 32px;
   gap: 16px;
 }
+
