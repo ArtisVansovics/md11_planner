@@ -37,7 +37,9 @@
 
 .box {
   display: flex;
+  flex-flow: column;
   justify-content: center;
+  align-items: center;
   margin-bottom: 32px;
   gap: 16px;
 }

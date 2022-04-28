@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './InputBox.scss';
-import TaskCard from '../TaskCard/TaskCard';
+// import TaskCard from '../TaskCard/TaskCard';
 
 const InputBox = () => {
   const [inputValue, setInputValue] = useState('');
@@ -10,11 +10,11 @@ const InputBox = () => {
       done: false,
     },
   ]);
-  const handleEdit = (index:number) => {
-    const newTasks = [...tasks];
-    newTasks[index].done = true;
-    setTasks(newTasks);
-  };
+  // const handleEdit = (index:number) => {
+  //   const newTasks = [...tasks];
+  //   newTasks[index].done = true;
+  //   setTasks(newTasks);
+  // };
 
   return (
     <div className="input-container">
@@ -41,13 +41,13 @@ const InputBox = () => {
           Add
         </button>
       </div>
-      <div className="task-list">
-        {tasks.map((task, index) => (
-          <TaskCard title={task.title} isDone={task.done} />
-        ))}
-      </div>
+      {/* <div className="task-list"> */}
+      {/*   {tasks.map((task, index) => ( */}
+      {/*     <TaskCard title={task.title} isDone={task.done} /> */}
+      {/*   ))} */}
+      {/* </div> */}
     </div>
   );
 };
 
-export default InputBox;
+// export default InputBox;
