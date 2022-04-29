@@ -1,13 +1,21 @@
 import React, { useState } from 'react';
-import './Planner.scss';
+import '../Planner/Planner.scss';
+import PlannerTask from '../PlannerTask/PlannerTask';
 
-const Planner = () => {
+const PlannerCheckbox = () => {
   const [inputValue, setInputValue] = useState('');
   const [tasks, setTasks] = useState([
     {
       title: 'Buy milk',
+      isDone: false,
     },
   ]);
+  const checkThisBox = (index:number) => {
+    const newTasks = [...tasks];
+    newTasks[index].isDone = !newTasks[index].isDone;
+    setTasks(newTasks);
+  };
+
   return (
     <div className="planner">
       <div className="planner__top-row">
@@ -25,6 +33,7 @@ const Planner = () => {
           onClick={() => {
             const newTask = {
               title: inputValue,
+              isDone: false,
             };
             setTasks([...tasks, newTask]);
           }}
@@ -33,14 +42,16 @@ const Planner = () => {
         </button>
       </div>
       <div className="planner__task-list">
-        <ul className="planner__list">
-          {tasks.map((task) => (
-            <li className="planner__item">{task.title}</li>
-          ))}
-        </ul>
+        {tasks.map((task, index) => (
+          <PlannerTask
+            title={task.title}
+            isDone={task.isDone}
+            onClick={() => checkThisBox(index)}
+          />
+        ))}
       </div>
     </div>
   );
 };
 
-export default Planner;
+export default PlannerCheckbox;

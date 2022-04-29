@@ -1,0 +1,21 @@
+.planner__task {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 16px;
+  font-size: 18px;
+  background-color: #F5E1C4;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.dark-mode .planner__task {
+  background-color: #7692A8;
+}
+
+.checked-task {
+  text-decoration: line-through;
+}
+

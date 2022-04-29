@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.scss';
 import Planner from './components/Planner/Planner';
+import PlannerCheckbox from './components/PlannerCheckbox/PlannerCheckbox';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -30,6 +31,16 @@ const App = () => {
               <h1>1st Planner</h1>
               <br />
               <Planner />
+            </div>
+          </div>
+        </div>
+        {/* Planner with checkbox */}
+        <div className="row">
+          <div className="col-xs-12">
+            <div className="box">
+              <h1>2nd Planner</h1>
+              <br />
+              <PlannerCheckbox />
             </div>
           </div>
         </div>
