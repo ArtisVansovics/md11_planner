@@ -105,3 +105,34 @@
   border-radius: 20px;
 }
 
+.planner__edit-input {
+  width: 50%;
+  background-color: transparent;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.planner__btn-edit {
+  background-color: #7692A8;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 18px;
+  user-select: none;
+
+  &:hover {
+    background-color: #E6F4FF;
+  }
+}
+
+.dark-mode .planner__btn-edit {
+  background-color: #E6F4FF;
+
+  &:hover {
+    background-color: #A88D65;
+  }
+}
+

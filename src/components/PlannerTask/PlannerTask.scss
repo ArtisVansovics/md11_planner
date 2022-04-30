@@ -1,7 +1,7 @@
 .planner__task {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start;
+  justify-content: stretch;
   align-items: center;
   width: 100%;
   gap: 5px;
@@ -15,6 +15,26 @@
   background-color: #7692A8;
 }
 
+.planner__task-info {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.planner__task-label {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 5px;
+}
+
+.planner__task-buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+}
+
 .planner__checkbox {
   cursor: pointer;
 }
@@ -23,19 +43,21 @@
   text-decoration: line-through;
 }
 
-.planner__delete-btn {
+.planner__task-btn {
   cursor: pointer;
   display: flex;
-  margin-left: auto;
   padding: 0;
   background-color: transparent;
   border: none;
   box-shadow: none;
 }
 
-.planner__delete-logo {
+.planner__btn-logo {
   width: 20px;
   height: 20px;
+}
+
+.planner__logo-erase {
   fill: #D94141;
 
   &:hover {
@@ -43,10 +65,26 @@
   }
 }
 
-.dark-mode .planner__delete-logo {
-  fill: #9F3030;
+.dark-mode .planner__logo-erase{
+  fill: #291A19;
 
   &:hover {
-    fill: #D94141;
+    fill: #9F3030;
+  }
+}
+
+.planner__logo-edit {
+  fill: #757537;
+
+  &:hover {
+    fill: #A8A87E;
+  }
+}
+
+.dark-mode .planner__logo-edit{
+  fill: #292911;
+
+  &:hover {
+    fill: #C9F5B8;
   }
 }

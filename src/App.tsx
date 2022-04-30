@@ -3,6 +3,7 @@ import './App.scss';
 import Planner from './components/Planner/Planner';
 import PlannerCheckbox from './components/PlannerCheckbox/PlannerCheckbox';
 import PlannerDelete from './components/PlannerDelete/PlannerDelete';
+import PlannerEdit from './components/PlannerEdit/PlannerEdit';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -25,33 +26,37 @@ const App = () => {
             </div>
           </div>
         </div>
-        {/* Basic planner */}
         <div className="row">
-          <div className="col-xs-12">
+          {/* Basic planner */}
+          <div className="col-xs-12 col-sm-6 col-lg-4">
             <div className="box">
               <h1>1st Planner</h1>
               <br />
               <Planner />
             </div>
           </div>
-        </div>
-        {/* Planner with checkbox */}
-        <div className="row">
-          <div className="col-xs-12">
+          {/* Planner with checkbox */}
+          <div className="col-xs-12 col-sm-6 col-lg-4">
             <div className="box">
               <h1>2nd Planner</h1>
               <br />
               <PlannerCheckbox />
             </div>
           </div>
-        </div>
-        {/* Planner with ability to delete tasks */}
-        <div className="row">
-          <div className="col-xs-12">
+          {/* Planner with option to delete tasks */}
+          <div className="col-xs-12 col-sm-6 col-lg-4">
             <div className="box">
               <h1>3rd Planner</h1>
               <br />
               <PlannerDelete />
+            </div>
+          </div>
+          {/* Planner with option to edit tasks */}
+          <div className="col-xs-12 col-sm-6 col-lg-4">
+            <div className="box">
+              <h1>4th Planner</h1>
+              <br />
+              <PlannerEdit />
             </div>
           </div>
         </div>
