@@ -4,18 +4,49 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
-  gap: 16px;
+  gap: 5px;
   font-size: 18px;
   background-color: #F5E1C4;
   border-radius: 10px;
-  padding: 10px;
+  padding: 10px 15px;
 }
 
 .dark-mode .planner__task {
   background-color: #7692A8;
 }
 
+.planner__checkbox {
+  cursor: pointer;
+}
+
 .checked-task {
   text-decoration: line-through;
 }
 
+.planner__delete-btn {
+  cursor: pointer;
+  display: flex;
+  margin-left: auto;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.planner__delete-logo {
+  width: 20px;
+  height: 20px;
+  fill: #D94141;
+
+  &:hover {
+    fill: #D90000;
+  }
+}
+
+.dark-mode .planner__delete-logo {
+  fill: #9F3030;
+
+  &:hover {
+    fill: #D94141;
+  }
+}

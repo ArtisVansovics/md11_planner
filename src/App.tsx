@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.scss';
 import Planner from './components/Planner/Planner';
 import PlannerCheckbox from './components/PlannerCheckbox/PlannerCheckbox';
+import PlannerDelete from './components/PlannerDelete/PlannerDelete';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -41,6 +42,16 @@ const App = () => {
               <h1>2nd Planner</h1>
               <br />
               <PlannerCheckbox />
+            </div>
+          </div>
+        </div>
+        {/* Planner with ability to delete tasks */}
+        <div className="row">
+          <div className="col-xs-12">
+            <div className="box">
+              <h1>3rd Planner</h1>
+              <br />
+              <PlannerDelete />
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '../Planner/Planner.scss';
-import PlannerTask from '../PlannerTask/PlannerTask';
+import PlannerTaskDelete from '../PlannerTaskDelete/PlannerTaskDelete';
 import Button from '../Button/Button';
 
 type tasksProps = {
@@ -8,7 +8,7 @@ type tasksProps = {
   isDone: boolean
 }
 
-const PlannerCheckbox = () => {
+const PlannerDelete = () => {
   const [inputValue, setInputValue] = useState('');
   const [tasks, setTasks] = useState<tasksProps[]>([]);
   const [visibleTasks, setVisibleTasks] = useState<tasksProps[]>([]);
@@ -41,6 +41,12 @@ const PlannerCheckbox = () => {
   const checkThisBox = (index:number) => {
     const newTasks = [...visibleTasks];
     newTasks[index].isDone = !newTasks[index].isDone;
+    setVisibleTasks(newTasks);
+  };
+  const eraseTask = (index:number) => {
+    let newTasks = [...tasks];
+    newTasks = newTasks.slice(0, index).concat(newTasks.slice(index + 1));
+    setTasks(newTasks);
     setVisibleTasks(newTasks);
   };
   const percentageDone = () => {
@@ -80,10 +86,11 @@ const PlannerCheckbox = () => {
       </div>
       <div className="planner__task-list">
         {visibleTasks.map((task, index) => (
-          <PlannerTask
+          <PlannerTaskDelete
             title={task.title}
             isDone={task.isDone}
             onClick={() => checkThisBox(index)}
+            eraseFn={() => eraseTask(index)}
             key={Math.random()}
           />
         ))}
@@ -101,4 +108,4 @@ const PlannerCheckbox = () => {
   );
 };
 
-export default PlannerCheckbox;
+export default PlannerDelete;
