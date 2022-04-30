@@ -12,6 +12,7 @@ const PlannerCheckbox = () => {
   const [inputValue, setInputValue] = useState('');
   const [tasks, setTasks] = useState<tasksProps[]>([]);
   const [currentTasks, setCurrentTasks] = useState<tasksProps[]>([]);
+
   const taskButtons = [
     {
       title: 'All',
@@ -35,13 +36,16 @@ const PlannerCheckbox = () => {
       },
     },
   ];
+
   const checkThisBox = (index:number) => {
     const newTasks = [...currentTasks];
     newTasks[index].isDone = !newTasks[index].isDone;
     setCurrentTasks(newTasks);
   };
-  console.log(tasks);
-  console.log(currentTasks);
+  const percentageDone = () => {
+    const doneTasks = tasks.filter((task) => task.isDone);
+    return (doneTasks.length / tasks.length) * 100;
+  };
 
   return (
     <div className="planner">
@@ -69,6 +73,9 @@ const PlannerCheckbox = () => {
         >
           Add
         </button>
+      </div>
+      <div className="planner__progressbar">
+        <div className="planner__progress" style={{ width: `${percentageDone()}%` }} />
       </div>
       <div className="planner__task-list">
         {currentTasks.map((task, index) => (
