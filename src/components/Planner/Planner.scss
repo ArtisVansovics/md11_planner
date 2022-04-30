@@ -16,9 +16,11 @@
   background-color: #1E3B40;
 }
 
-.planner__top-row {
+.planner__row {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%;
   gap: 16px;
 }
 

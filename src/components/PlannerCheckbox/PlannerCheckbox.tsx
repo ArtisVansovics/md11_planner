@@ -1,24 +1,51 @@
 import React, { useState } from 'react';
 import '../Planner/Planner.scss';
 import PlannerTask from '../PlannerTask/PlannerTask';
+import Button from '../Button/Button';
+
+type tasksProps = {
+  title: string
+  isDone: boolean
+}
 
 const PlannerCheckbox = () => {
   const [inputValue, setInputValue] = useState('');
-  const [tasks, setTasks] = useState([
+  const [tasks, setTasks] = useState<tasksProps[]>([]);
+  const [currentTasks, setCurrentTasks] = useState<tasksProps[]>([]);
+  const taskButtons = [
     {
-      title: 'Buy milk',
-      isDone: false,
+      title: 'All',
+      onClick: () => {
+        setCurrentTasks([...tasks]);
+      },
     },
-  ]);
+    {
+      title: 'In progress',
+      onClick: () => {
+        const newTasks = [...tasks];
+        setCurrentTasks(newTasks
+          .filter((task) => !task.isDone));
+      },
+    },
+    {
+      title: 'Completed',
+      onClick: () => {
+        const newTasks = [...tasks];
+        setCurrentTasks(newTasks.filter((task) => task.isDone));
+      },
+    },
+  ];
   const checkThisBox = (index:number) => {
-    const newTasks = [...tasks];
+    const newTasks = [...currentTasks];
     newTasks[index].isDone = !newTasks[index].isDone;
-    setTasks(newTasks);
+    setCurrentTasks(newTasks);
   };
+  console.log(tasks);
+  console.log(currentTasks);
 
   return (
     <div className="planner">
-      <div className="planner__top-row">
+      <div className="planner__row">
         <input
           type="text"
           className="planner__input"
@@ -36,17 +63,29 @@ const PlannerCheckbox = () => {
               isDone: false,
             };
             setTasks([...tasks, newTask]);
+            setCurrentTasks([...tasks, newTask]);
+            setInputValue('');
           }}
         >
           Add
         </button>
       </div>
       <div className="planner__task-list">
-        {tasks.map((task, index) => (
+        {currentTasks.map((task, index) => (
           <PlannerTask
             title={task.title}
             isDone={task.isDone}
             onClick={() => checkThisBox(index)}
+            key={Math.random()}
+          />
+        ))}
+      </div>
+      <div className="planner__row">
+        {taskButtons.map((taskButton) => (
+          <Button
+            title={taskButton.title}
+            onClick={taskButton.onClick}
+            key={Math.random()}
           />
         ))}
       </div>

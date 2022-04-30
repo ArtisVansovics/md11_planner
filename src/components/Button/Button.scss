@@ -1,18 +1,22 @@
-.blue-btn {
+.button {
   display: flex;
   justify-content: center;
-  background-color: darkgreen;
-  padding: 20px 25px;
-  border-radius: 15px;
+  background-color: #756C5E;
+  padding: 10px 15px;
+  border-radius: 10px;
   cursor: pointer;
   border: none;
-  transition: background-color 1s;
+  transition: opacity 1s;
   color: white;
   font-size: 18px;
   user-select: none;
 
   &:hover {
-    background-color: lightgreen;
-    color: darkgreen;
+    opacity: 0.7;
   }
+}
+
+.dark-mode .button {
+  background-color: #DCF5E4;
+  color: #1E2940;
 }

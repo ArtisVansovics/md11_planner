@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import './Planner.scss';
 
+type tasksProps = {
+  title: string
+}
+
 const Planner = () => {
   const [inputValue, setInputValue] = useState('');
-  const [tasks, setTasks] = useState([
-    {
-      title: 'Buy milk',
-    },
-  ]);
+  const [tasks, setTasks] = useState<tasksProps[]>([]);
   return (
     <div className="planner">
-      <div className="planner__top-row">
+      <div className="planner__row">
         <input
           type="text"
           className="planner__input"
@@ -35,7 +35,7 @@ const Planner = () => {
       <div className="planner__task-list">
         <ul className="planner__list">
           {tasks.map((task) => (
-            <li className="planner__item">{task.title}</li>
+            <li className="planner__item" key={Math.random()}>{task.title}</li>
           ))}
         </ul>
       </div>
