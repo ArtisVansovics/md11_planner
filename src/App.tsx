@@ -4,6 +4,7 @@ import Planner from './components/Planner/Planner';
 import PlannerCheckbox from './components/PlannerCheckbox/PlannerCheckbox';
 import PlannerDelete from './components/PlannerDelete/PlannerDelete';
 import PlannerEdit from './components/PlannerEdit/PlannerEdit';
+import PlannerPriority from './components/PlannerPriority/PlannerPriority';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -26,7 +27,7 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row center-xs">
           {/* Basic planner */}
           <div className="col-xs-12 col-sm-6 col-lg-4">
             <div className="box">
@@ -57,6 +58,14 @@ const App = () => {
               <h1>4th Planner</h1>
               <br />
               <PlannerEdit />
+            </div>
+          </div>
+          {/* Planner with option to set task priority */}
+          <div className="col-xs-12 col-sm-8 col-md-6">
+            <div className="box">
+              <h1>Final Planner</h1>
+              <br />
+              <PlannerPriority />
             </div>
           </div>
         </div>

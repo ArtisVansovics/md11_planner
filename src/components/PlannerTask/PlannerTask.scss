@@ -15,6 +15,12 @@
   background-color: #7692A8;
 }
 
+.planner__task-container {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}
+
 .planner__task-info {
   display: flex;
   flex-flow: row wrap;
@@ -87,4 +93,47 @@
   &:hover {
     fill: #C9F5B8;
   }
+}
+
+.priority--low {
+  background-color: #2BD95C;
+}
+
+.dark-mode .priority--low  {
+  background-color: #757537;
+}
+
+.priority--medium {
+  background-color: #D9BD57;
+}
+
+.dark-mode .priority--medium  {
+  background-color: #C2A73E;
+}
+
+.priority--high {
+  background-color: #E66C39;
+}
+
+.dark-mode .priority--high  {
+  background-color: #66301A;
+}
+
+.priority-label {
+  font-size: 14px;
+  border: 2px solid #1E2940;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.priority-label--high {
+  background-color: #9F3030;
+}
+
+.priority-label--medium {
+  background-color: #E6A750;
+}
+
+.priority-label--low {
+  background-color: #21A647;
 }
