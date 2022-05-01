@@ -11,7 +11,7 @@ type PlannerTaskDeleteProps = {
 const PlannerTaskDelete:FC<PlannerTaskDeleteProps> = ({
   title, isDone, onClick, eraseFn,
 }) => (
-  <div className="planner__task">
+  <div className="planner__task space-between">
     <div className="planner__task-label">
       <input
         type="checkbox"
